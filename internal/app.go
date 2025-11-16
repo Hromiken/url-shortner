@@ -54,7 +54,7 @@ func Run() {
 	router.Use(middleware.Logger)
 
 	router.Post("/shorten", h.SaveURL)
-	router.Get("/s/", h.Redirect)
+	router.Get("/s/{alias}", h.Redirect)
 	router.Get("/analytics/{alias}", h.GetAnalytics)
 
 	zlog.Logger.Info()

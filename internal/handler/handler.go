@@ -102,7 +102,6 @@ func (h *Handler) Redirect(w http.ResponseWriter, r *http.Request) {
 	go func() {
 		_ = h.svc.SaveUserClick(context.Background(), c)
 	}()
-
 	http.Redirect(w, r, urlEntity.OriginalURL, http.StatusFound)
 }
 
